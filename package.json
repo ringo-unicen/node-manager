@@ -1,0 +1,46 @@
+{
+  "name": "node-manager",
+  "version": "1.0.0",
+  "description": "Ringo Node Manager service",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "test-coverage": "npm test && istanbul cover node_modules/mocha/bin/_mocha -- -R spec",
+    "install-local": "npm install -g mocha & npm install -g node-inspector & npm install",
+    "start": "node server.js 1 prod 127.0.0.1 3000 9000",
+    "debug": "node-debug server.js 0 dev 127.0.0.1 3000 9000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ringo-unicen/node-manager"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Pablo Saavedra",
+  "license": "",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^2.0.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-nodemon": "^0.4.0",
+    "istanbul": "^0.3.17",
+    "load-grunt-tasks": "^3.2.0",
+    "mocha": "^2.2.5",
+    "sinon": "^1.15.4"
+  },
+  "dependencies": {
+    "bluebird": "^2.9.33",
+    "body-parser": "^1.13.2",
+    "cors": "^2.7.1",
+    "dockerode": "^2.2.1",
+    "dockerode-promise": "^0.1.0",
+    "express": "^4.13.0",
+    "glob": "^5.0.13",
+    "lodash": "^3.10.0",
+    "morgan": "^1.6.1",
+    "request-promise": "^0.4.2"
+  }
+}
