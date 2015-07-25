@@ -26,7 +26,8 @@ var doLog = function (message) {
  * Creates a new container for the given service type.
  * @param {String} type The service type.
  */
-exports.create = function (type) {
+exports.create = function (typeName) {
+    var type = typeName.toLowerCase();
     console.log('Creating VM for type', type);
     var image = images[type];
     if (!image) {
