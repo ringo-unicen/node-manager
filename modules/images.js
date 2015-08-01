@@ -1,3 +1,4 @@
 module.exports = {
-    elasticsearch: 'elasticsearch'
+    elasticsearch: 'elasticsearch',
+    mysql: 'mysql'
 };
