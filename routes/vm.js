@@ -1,7 +1,7 @@
 module.exports = function (app) {
     var vmManager = require('../modules/vmManager.js');
     var agent = require('../modules/agent.js');
-    var request = require('request-promise');
+    var api = require('../modules/api');
     app.route('/vm')
         .post(function (req, res) {
            if (!req.body.id || !req.body.type) {
@@ -14,7 +14,7 @@ module.exports = function (app) {
                 res.status(201).location('/vm/' + id).end();
                 vmManager.run(id).then(function (data) {
                     console.log('Successfully started container', id);
-                    //Should be notifying the API now.
+                    return api.addVmInfo(req.body.id, data);
                 }).catch(function (err) {
                     console.error('Error creating container with id ' + id, err);
                     console.log('Error starting container with id', id);
