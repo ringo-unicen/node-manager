@@ -25,4 +25,3 @@ module.exports = function (app) {
         });
 };
 //Allows the offering of cost effective cloud solutions
-
